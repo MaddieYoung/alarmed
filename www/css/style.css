@@ -1,5 +1,5 @@
 body{ 
-    background-image: url(''); 
+    background-image:url('texturedbg.png');
     font-family: helvetica, Arial, sans-serif;  
     text-align: center; 
     width:  320px; 
@@ -10,18 +10,22 @@ body{
 #digitalClock{}
             
 #clockCanvas{
-    margin: 190px 20px 20px 67px;
+    top:195px;
+   left:75px;
+    position:fixed;
 }    
 
-
+.uphour{}
 
 
 
 
 
 #timer {
-    margin: 20px;
-    width: 80px;
+    margin: ;
+    bottom:218px;
+   left:30px;
+    width: 240px;
 }
 
 .pietimer {
@@ -32,13 +36,8 @@ body{
     float: left;
 }
 .pietimer > .percent {
-    position: absolute;
-    top: 1.05em;
-    left: 0;
-    width: 3.33em;
-    font-size: 0.3em;
-    text-align:center;
-    display: none;
+  visibility: hidden;
+    
 }
 .pietimer > .slice {
     position:absolute;
@@ -57,7 +56,8 @@ body{
     clip:rect(0em,0.5em,1em,0em);
     -moz-border-radius:0.5em;
     -webkit-border-radius:0.5em; 
-    border-radius:0.5em; 
+    border-radius:0.5em;
+    opacity:0.4; 
 }
 .pietimer > .slice > .pie.fill {
     -moz-transform:rotate(180deg) !important;

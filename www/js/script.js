@@ -145,7 +145,7 @@ $(document).ready(function() {
 											   fill: false,
 											   showPercentage: true,
 											   callback: function() {
-											   alert("yahoo, timer is done!");
+											   alert("Time's up!");
 											   $('#timer').pietimer('reset');
 											   }
 						  });
