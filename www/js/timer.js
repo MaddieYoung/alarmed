@@ -15,7 +15,9 @@
   init : function( options ) {
   var state = {
   timer: null,
-  timerSeconds: 10,
+  //THIS IS WHERE THE DIFFERENCE GETS PLUGGED IN!
+  timerSeconds:  20,
+  //THIS IS WHERE THE DIFFERENCE GETS PLUGGED IN!
   callback: function () {},
   timerCurrent: 0,
   showPercentage: false,
@@ -103,17 +105,3 @@
   
   };
   })(jQuery);
-
-
-$(document).ready(function() {
-                  $('#timer').pietimer({
-                                       timerSeconds: 10,
-                                       color: '#234',
-                                       fill: false,
-                                       showPercentage: true,
-                                       callback: function() {
-                                       alert("yahoo, timer is done!");
-                                       $('#timer').pietimer('reset');
-                                       }
-                                       });
-                  });

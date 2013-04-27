@@ -1,4 +1,6 @@
 
+//billemeyer.k@gmail.com
+
 $(document).ready(function() {
                   
                   // Get Canvas & Context
@@ -125,7 +127,19 @@ $(document).ready(function() {
                   $('#setAlarm').click(function(){
                                        alarmClock.status = alarmClock.status == "set" ? "clock" : "set";
                                        alarmClock.alarmStatus = "on";
-                                       $(this).toggleClass("activated");      
+                                       $(this).toggleClass("activated");
+                                       
+                                       $('#timer').pietimer({
+                                                            color: '#234',
+                                                            fill: false,
+                                                            showPercentage: true,
+                                                            timerSeconds: 5,
+                                                            callback: function() {
+                                                            alert("Time's up!");
+                                                            $('#timer').pietimer('reset');
+                                                            }
+                                                            });
+                                       
                                        return false;
                                       
                                        });    
@@ -140,15 +154,7 @@ $(document).ready(function() {
                   
                   
                   
-					$('#timer').pietimer({
-											   color: '#234',
-											   fill: false,
-											   showPercentage: true,
-											   callback: function() {
-											   alert("Time's up!");
-											   $('#timer').pietimer('reset');
-											   }
-						  });
+					
                   
                   });
                   
