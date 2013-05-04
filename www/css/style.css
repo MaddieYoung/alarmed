@@ -1,109 +1,130 @@
-body{ 
-    background-image:url('texturedbg.png');
-    font-family: helvetica, Arial, sans-serif;  
-    text-align: center; 
-    width:  320px; 
-  height: 200px
-    margin: 0 auto;
+body {
+	background-image:url(texturedbg.png);
+	font-family:helvetica,Arial,sans-serif;
+	margin:0;
+	overflow:hidden;
 }
 
-#digitalClock{}
-            
-#clockCanvas{
-    top:195px;
-   left:75px;
-    position:fixed;
-}    
+.clock-stuff {
+	margin-left: 75px;
+	padding-top: 100px;
+}
 
-.uphour{}
-
-
-
-
+#clockCanvas {
+	position:absolute;
+	margin-top: 45px;
+}
 
 #timer {
-    margin: ;
-    bottom:218px;
-   left:30px;
-    width: 240px;
+	margin:0;
+	position:absolute;
+	width:240px;
+	margin-top:-295px;
+	margin-left:-35px;
+	
 }
 
 .pietimer {
-    position:relative;
-    font-size: 200px;
-    width:1em;
-    height:1em;
-    float: left;
+	position:relative;
+	font-size:200px;
+	width:1em;
+	height:1em;
+	float:left;
 }
+
 .pietimer > .percent {
-  visibility: hidden;
-    
+	visibility:hidden;
 }
+
 .pietimer > .slice {
-    position:absolute;
-    width:1em;
-    height:1em;
-    clip:rect(0px,1em,1em,0.5em);
+	position:absolute;
+	width:1em;
+	height:1em;
+	clip:rect(0px,1em,1em,0.5em);
 }
+
 .pietimer > .slice.gt50 {
-    clip:rect(auto, auto, auto, auto);
+	clip:rect(auto,auto,auto,auto);
 }
+
 .pietimer > .slice > .pie {
-    border: 0.1em solid #c0c0c0;
-    position:absolute;
-    width:0.8em; /* 1 - (2 * border width) */
-    height:0.8em; /* 1 - (2 * border width) */
-    clip:rect(0em,0.5em,1em,0em);
-    -moz-border-radius:0.5em;
-    -webkit-border-radius:0.5em; 
-    border-radius:0.5em;
-    opacity: 0.4; 
+	border:.1em solid silver;
+	position:absolute;
+	width:.8em;
+/* 1 - (2 * border width) */
+	height:.8em;
+/* 1 - (2 * border width) */
+	clip:rect(0em,0.5em,1em,0em);
+	-moz-border-radius:.5em;
+	-webkit-border-radius:.5em;
+	border-radius:.5em;
+	opacity:.4;
 }
+
 .pietimer > .slice > .pie.fill {
-    -moz-transform:rotate(180deg) !important;
-    -webkit-transform:rotate(180deg) !important;
-    -o-transform:rotate(180deg) !important;
-    transform:rotate(180deg) !important;
+	-moz-transform:rotate(180deg)!important;
+	-webkit-transform:rotate(180deg)!important;
+	-o-transform:rotate(180deg)!important;
+	transform:rotate(180deg)!important;
 }
+
 .pietimer.fill > .percent {
-    display: none;
+	display:none;
 }
+
 .pietimer.fill > .slice > .pie {
-    border: transparent;
-    background-color: #c0c0c0;
-    width:1em;
-    height:1em;
+	border:transparent;
+	background-color:silver;
+	width:1em;
+	height:1em;
+}
+
+.button {
+	text-decoration:none;
+	color:rgba(0,0,0,0.9);
+	background:#111;
+	padding:10px 20px;
+	opacity:.05;
+	width:125px;
+	height:150px;
+	margin:0 auto;
+	display:inline-block;
+	-webkit-border-radius:100px;
+	-webkit-transition:all .3s ease-in-out;
+	/* Only Need WEBKIT stuff here */
+}
+
+.button:hover,.activated {
+	color:rgba(0,0,0,0.9);
+	background:#111;
+	opacity:.1;
+}
+
+#done {
 }
 
 
-
-
-
-
-
-
-.button{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.9);
-    background: #111;
-    padding: 10px 20px;
-   position:fixed;
-   top:150px;
-   right:80px;
-  opacity:0.05;
-    width: 125px;
-    height: 150px;
-    display:inline-block;            
-        -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;   
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-}
-        
-.button:hover, .activated{
-    color: rgba(0, 0, 0, 0.9);
-    background: #111;
-     opacity:0.1;
+/*   Matt Added 5/4/13  */
+.wrapper {
+	width:320px;
+	height:480px;
+	margin:0 auto;
 }
 
-#done {}
+.buttons {
+	position:absolute;
+	z-index:99;
+	width:320px;
+	opacity:0;
+}
+
+.buttons button { /* Makes Buttons Styleable */
+	background:red;
+	border:none;
+	color:#fff;
+	
+}
+
+.activated {
+	background: orange;
+}

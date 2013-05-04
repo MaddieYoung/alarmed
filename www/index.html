@@ -4,7 +4,10 @@
         <meta charset=utf-8 />
         <title>Online Digital Clock</title>
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        
+        <!-- Added local copy of JQUERY incase you are not online -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        
         <script type="text/javascript" src="js/alarm.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/timer.js"></script>
@@ -15,35 +18,33 @@
         
     </head>
     <body>
-        <button id="up">Up Hour</button>
-        <button id="upminute">Up Minute</button>
-        <button id="downhour">Down Hour</button>
-        <button id="downminute">Down Minute</button>
-        <button id="done">Cancel</button>
-        
-        <div id="timer"></div>
-        
-        <div id="digitalClock">
-            <canvas id="clockCanvas"width="321" height="600">
-                <p>Your browser doesn't support the Canvas Element.</p>
-            </canvas>
-            <audio id="alarmBeep">
-               <!-- <source src="audio/beep-6.ogg" /> -->
-                <source src="audio/beep.mp3" />
-                <p>Your browser doesn't support Audio.</p>
-            </audio>
-            <p>
-            <a href="#" id="setAlarm" class="button"></a>
-           
-            </p>
+    <div class="wrapper"><!-- Keeps elements in place together-->
+        <div class="buttons"> <!-- Makes it easier to z-index -->
+            <button id="up">Up Hour</button>
+            <button id="upminute">Up Minute</button>
+            <button id="downhour">Down Hour</button>
+            <button id="downminute">Down Minute</button>
+            <button id="done">Cancel</button>
         </div>
-        <script>
-        
-        
-        
-	
-
-        </script>
+        <div class="clock-stuff"> <!-- helps keep clock bits together -->
+		    <div id="timer"></div>
+		    
+		    <div id="digitalClock">
+		        <canvas id="clockCanvas"width="321" height="600">
+		            <p>Your browser doesn't support the Canvas Element.</p>
+		        </canvas>
+		        <audio id="alarmBeep">
+		           
+		            <source src="audio/beep.mp3" />
+		            <p>Your browser doesn't support Audio.</p>
+		        </audio>
+		        <p>
+		        <a href="#" id="setAlarm" class="button"></a>
+		       
+		        </p>
+        </div><!-- End Clock Stuff-->
+        </div>
+    </div> <!-- End Wrapper -->
     
     </body> 
 </html>

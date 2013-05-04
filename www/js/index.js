@@ -34,9 +34,11 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -50,6 +52,7 @@ var app = {
 
 
 $(document).ready(function() {
+                  
                   
                   // Get Canvas & Context
                   var canvas = document.getElementById('clockCanvas');
